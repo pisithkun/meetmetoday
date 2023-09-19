@@ -50,7 +50,7 @@
         <input type="text" name="hobby" value="{{old('hobby',$user->hobby)}}"/>
       </div>
       <div class="my-whatsapp">
-        <h3>Hobby :</h3>
+        <h3>Whatsapp :</h3>
         <input type="text" name="whatsapp" value="{{old('hobby',$user->whatsapp)}}"/>
       </div>
       <div class="my-about-me">
