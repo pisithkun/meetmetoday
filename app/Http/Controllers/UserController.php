@@ -137,6 +137,7 @@ class UserController extends Controller
 
         $user->from = $request->from;
         $user->hobby = $request->hobby;
+        $user->whatsapp = $request->whatsapp;
         $user->Aboutme = $request->Aboutme;
         $user->save();
         if (isset($oldAvatar)) {
