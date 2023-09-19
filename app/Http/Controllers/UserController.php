@@ -110,6 +110,7 @@ class UserController extends Controller
 
     public function profile(User $user)
     {
+        $user = Auth::user();
         $otherSendRequest = DB::table('follows')->where([['followeduser', '=', auth()->user()->id]])->get();
         $authSendRequest = DB::table('follows')->where([['user_id', '=', auth()->user()->id]])->get();
         return view('/profile', ['user' => $user, 'otherSendRequest' => $otherSendRequest, 'authSendRequest' => $authSendRequest, 'followers' => $user->followers()->latest()->get(), 'following' => $user->following()->latest()->get()]);
@@ -117,11 +118,12 @@ class UserController extends Controller
 
     public function edit(User $user)
     {
+        $user = Auth::user();
         return view('/editprofile', ['user' => $user, 'followers' => $user->followers()->latest()->get(), 'following' => $user->following()->latest()->get()]);
     }
     public function update(Request $request, User $user)
     {
-        $user1 = Auth::user();
+        $user = Auth::user();
 
         if ($request->avatar) {
             $request->validate([
@@ -129,14 +131,14 @@ class UserController extends Controller
             ]);
             $filename = auth()->user()->id . '-' . uniqid() . '.jpg';
             $request->file('avatar')->storeAs('public/avatars/', $filename);
-            $oldAvatar = $user1->avatar;
-            $user1->avatar = $filename;
+            $oldAvatar = $user->avatar;
+            $user->avatar = $filename;
         }
 
-        $user1->from = $request->from;
-        $user1->hobby = $request->hobby;
-        $user1->Aboutme = $request->Aboutme;
-        $user1->save();
+        $user->from = $request->from;
+        $user->hobby = $request->hobby;
+        $user->Aboutme = $request->Aboutme;
+        $user->save();
         if (isset($oldAvatar)) {
             Storage::delete(str_replace("/storage/", "public/", $oldAvatar));
         }
