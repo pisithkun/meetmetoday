@@ -129,8 +129,8 @@ class UserController extends Controller
             ]);
             $filename = auth()->user()->id . '-' . uniqid() . '.jpg';
             $request->file('avatar')->storeAs('public/avatars/', $filename);
-            $oldAvatar = $user->avatar;
-            $user->avatar = $filename;
+            $oldAvatar = $user1->avatar;
+            $user1->avatar = $filename;
         }
 
         $user1->from = $request->from;
