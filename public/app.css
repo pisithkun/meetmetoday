@@ -1,0 +1,365 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.sign-body{
+  min-height: 100vh;
+  width: 100%;
+  background-image: url('https://images.unsplash.com/photo-1521335751419-603f61523713?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1326&q=80');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.Apptitle{
+  color:darkcyan;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: white;
+  font-size: 80px;
+  width:600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+
+.container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  max-width: 430px;
+  width: 100%;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+.container .registration{
+  display: none;
+}
+#check:checked ~ .registration{
+  display: block;
+}
+#check:checked ~ .login{
+  display: none;
+}
+#check{
+  display: none;
+}
+.container .form{
+  padding: 2rem;
+}
+.form header{
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+ .form input{
+   height: 60px;
+   width: 100%;
+   padding: 0 15px;
+   font-size: 17px;
+   margin-bottom: 1.3rem;
+   border: 1px solid #ddd;
+   border-radius: 6px;
+   outline: none;
+ }
+ .form input:focus{
+   box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+ }
+.form a{
+  font-size: 16px;
+  color: darkcyan;
+  text-decoration: none;
+}
+.form a:hover{
+  text-decoration: underline;
+}
+.form input.button{
+  color: #fff;
+  background: darkcyan;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-top: 1.7rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.form input.button:hover{
+  background: #006653;
+}
+.signup{
+  font-size: 17px;
+  text-align: center;
+}
+.signup label{
+  color: darkcyan;
+  cursor: pointer;
+}
+.signup label:hover{
+  text-decoration: underline;
+}
+.my-pro-container{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  width:100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: darkcyan;
+}
+.App-name{
+  margin-left: 10px;
+  text-decoration: none;
+  color: white;
+  font-size: 35px;
+}
+
+.my-pro-right{
+  padding: 0 15px;
+  width:220px;
+  height:40px;
+  display:flex;
+  justify-content: space-between;
+
+}
+.my-pro-right img{
+  width: 35px;
+  height:35px;
+  border-radius: 20px;
+}
+.DM {
+  color: white;
+}
+.my-pro-right .submit-button{
+  color: darkcyan;
+  background: white;
+  font-size: 13px;
+  font-weight: 800;
+  padding:5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.4s; 
+}
+
+.profile-top{
+  width:500px;
+  display:flex;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  justify-content:left;
+  padding-left: 100px;
+}
+.profile-top img{
+  width: 200px;
+  height:200px;
+  border-radius: 100px;
+
+}
+.profile-top .edit-button{
+  margin-left: 10px;
+  color: white;
+  background: darkcyan;
+  font-size: 13px;
+  font-weight: 800;
+  padding:5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.4s; 
+}
+.upload-button{
+  width:500px;
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: center;
+
+}
+
+.profile-detail{
+  width:500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:50px;
+}
+
+.profile-detail .my-location{
+  width:600px;
+  display:flex;
+  margin-top: 20px;
+
+}
+.profile-detail .my-location h3{
+  width:100px;
+
+}
+.profile-detail .my-from{
+  display:flex;
+  margin-top: 20px;
+}
+.profile-detail .my-from h3{
+  width:100px;
+
+}
+
+.profile-detail .my-hobby{
+  display:flex;
+  margin-top: 20px;
+}
+.profile-detail .my-hobby h3{
+  width:100px;
+}
+.profile-detail .my-about-me{
+  margin-top: 20px;
+}
+.profile-detail .my-about-me textarea{
+  width:370px;
+  height:100px;
+}
+.profile-detail .my-about-me p{
+  white-space: pre-wrap;
+}
+
+.profile-detail .submit{
+  margin-left: 130px;
+  color: white;
+  background: darkcyan;
+  font-size: 13px;
+  font-weight: 800;
+  padding:5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.4s;  
+}
+
+
+
+
+.People-around{
+  width:100%;
+  text-align: center;
+  font-size: 50px;
+}
+
+.set-distance{
+  display:flex;
+  width:700px;
+  height:100px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+  align-items: center;
+}
+.set-distance form{
+  display: flex;
+  align-items: center;
+}
+
+.set-distance .slider{
+  -webkit-appearance: none;
+  background: #d3d3d3;
+  width:300px;
+  height: 30px;
+  margin-top: 10px;
+  margin-left:10px;
+}
+.set-distance .slider:hover {
+  opacity: 1;
+}
+.set-distance .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width:30px;
+  height: 30px;
+  background: darkcyan;
+  cursor: pointer;
+}
+.set-distance .range_val{
+  margin-left: 15px;
+  margin-right:17px;
+  width:10px;
+  font-size: 16px;
+  font-weight: 800;
+}
+.set-distance .submit{
+  height: 50px;
+  width: 60px;
+  margin-left: 30px;
+  color: white;
+  background: darkcyan;
+  font-size: 16px;
+  font-weight: 800;
+  padding:5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.4s; 
+}
+
+.No-People-around{
+  width:700px;
+  margin-left: auto;
+  margin-right: auto;
+  background: lightgray;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 50px;
+}
+
+.request_received{
+  width:500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:50px;
+}
+.request_sent{
+  width:500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:50px;
+}
+.Matched{
+  width:500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:50px;
+}
+
+.home-profile{
+  margin-top:40px;
+  margin-left: auto;
+  margin-right: auto;
+  width:700px;
+  height:200px;
+  display:flex;
+  background: darkcyan;
+  border-radius: 10px;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+
+}
+.home-profile img{
+  margin-left: 20px;
+  width: 150px;
+  height:150px;
+  border-radius: 75px;
+}
+.home-profile h2{
+  margin-left: 40px;
+}
+
+.pro-footer{
+  width:100%;
+  text-align: center;
+  margin-top: 100px;
+}
+.pro-footer a{
+  text-decoration: none;
+  color: black;
+}
