@@ -49,6 +49,10 @@
           <h3 name="hobby">Hobby :</h3> 
           <h3>{{$user->hobby}}</h3>
         </div>
+        <div class="my-whatsapp">
+          <h3 name="whatsapp">Whatsapp :</h3> 
+          <h3>{{$user->whatsapp}}</h3>
+        </div>
         <div class="my-about-me">
           <h3>About Me :</h3>
           <p name="Aboutme">{{$user->Aboutme}}</p>
