@@ -49,6 +49,10 @@
         <h3>Hobby :</h3>
         <input type="text" name="hobby" value="{{old('hobby',$user->hobby)}}"/>
       </div>
+      <div class="my-whatsapp">
+        <h3>Hobby :</h3>
+        <input type="text" name="whatsapp" value="{{old('hobby',$user->whatsapp)}}"/>
+      </div>
       <div class="my-about-me">
         <h3>About Me :</h3>
         <textarea type="text" form="my-profile" rows="4" name="Aboutme">{{old('Aboutme',$user->Aboutme)}}</textarea>
