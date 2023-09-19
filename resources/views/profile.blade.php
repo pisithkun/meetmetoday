@@ -34,7 +34,7 @@
     </div>
     <div class="profile-top">
       <img src="{{auth()->user()->avatar}}"/>
-      <form action="/profile/{{$user->username}}/edit" method="POST">
+      <form action="/myprofile/{{$user->username}}/edit" method="POST">
         @csrf
         <button class="edit-button">Edit Profile</button>
       </form>

@@ -80,7 +80,7 @@ class UserController extends Controller
     {
         return view('signin');
     }
-    public function showHome()
+    public function showHome(User $user)
     {
         if (auth()->check()) {
 
@@ -95,7 +95,7 @@ class UserController extends Controller
             $user1->save();
 
             $otherUsers = User::where('id', '<>', auth()->user()->id)->get();
-            return view('/home', ['otherUsers' => $otherUsers, 'userdistance' => 50]);
+            return view('/home', ['otherUsers' => $otherUsers, 'userdistance' => 50, 'followers' => $user->followers()->latest()->get(), 'following' => $user->following()->latest()->get()]);
         } else {
             return view('/signin');
         }
@@ -112,17 +112,16 @@ class UserController extends Controller
     {
         $otherSendRequest = DB::table('follows')->where([['followeduser', '=', auth()->user()->id]])->get();
         $authSendRequest = DB::table('follows')->where([['user_id', '=', auth()->user()->id]])->get();
-
         return view('/profile', ['user' => $user, 'otherSendRequest' => $otherSendRequest, 'authSendRequest' => $authSendRequest, 'followers' => $user->followers()->latest()->get(), 'following' => $user->following()->latest()->get()]);
     }
 
     public function edit(User $user)
     {
-        return view('/editprofile', ['user' => $user]);
+        return view('/editprofile', ['user' => $user, 'followers' => $user->followers()->latest()->get(), 'following' => $user->following()->latest()->get()]);
     }
-    public function update(Request $request)
+    public function update(Request $request, User $user)
     {
-        $user = Auth::user();
+        $user1 = Auth::user();
 
         if ($request->avatar) {
             $request->validate([
@@ -134,14 +133,14 @@ class UserController extends Controller
             $user->avatar = $filename;
         }
 
-        $user->from = $request->from;
-        $user->hobby = $request->hobby;
-        $user->Aboutme = $request->Aboutme;
-        $user->save();
+        $user1->from = $request->from;
+        $user1->hobby = $request->hobby;
+        $user1->Aboutme = $request->Aboutme;
+        $user1->save();
         if (isset($oldAvatar)) {
             Storage::delete(str_replace("/storage/", "public/", $oldAvatar));
         }
-        return view('/profile', ['user' => $user]);
+        return view('/profile', ['user' => $user, 'followers' => $user->followers()->latest()->get(), 'following' => $user->following()->latest()->get()]);
     }
     public function otherProfile(User $user)
     {
