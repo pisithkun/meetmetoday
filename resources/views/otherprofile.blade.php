@@ -62,7 +62,7 @@
      @endif
      @if (count($otherSendRequest) > 0 && count($authSendRequest)>0)
       @csrf
-      <button class="edit-button">Chat with Whatapp</button>
+      <button class="edit-button">Whatapp ID {{$user->username}}</button>
       <form action="/delete-follow/{{$user->username}}" method="POST">
         @csrf
         <button class="edit-button">Unmatch</button>
