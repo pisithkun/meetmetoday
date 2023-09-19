@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Follow;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request;  
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -104,7 +104,7 @@ class UserController extends Controller
     public function showUserDistance(Request $request)
     {
         //        $request->session()->regenerate();
-        $otherUsers = DB::table('users')->where('id', '<>', auth()->user()->id)->get();
+        $otherUsers = User::where('id', '<>', auth()->user()->id)->get();
         return view('/home', ['otherUsers' => $otherUsers, 'userdistance' => $request->slider]);
     }
 
