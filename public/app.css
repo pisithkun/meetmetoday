@@ -214,6 +214,13 @@
 .profile-detail .my-hobby h3{
   width:100px;
 }
+.profile-detail .my-whatsapp{
+  display:flex;
+  margin-top: 20px;
+}
+.profile-detail .my-whatsapp h3{
+  width:100px;
+}
 .profile-detail .my-about-me{
   margin-top: 20px;
 }
